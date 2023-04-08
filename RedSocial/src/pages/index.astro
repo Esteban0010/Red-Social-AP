@@ -2,16 +2,42 @@
 import Layout from '../layouts/Layout.astro';
 import NavBar from '../components/NavBar.astro';
 import CardUser from '../components/Card-User.astro';
+import {useStore} from "@nanostores/preact";
+import { users } from '../../store';
+import { resul } from '../Ajax/ajax';
+
+let userss = resul.results
+
+  
 ---
 
 <Layout title="Welcome to Astro.">
 <NavBar/>
 <div>
-	<CardUser/>
-	<CardUser/>
-	<CardUser/>
-	<CardUser/>
-	<CardUser/>
+	{userss &&
+	userss.map((elem, i) => {
+			if (userss.length === i + 1) {
+				return (
+					<CardUser
+					id={elem.login.uuid}
+						name={elem.name.first}
+						lastname={elem.name.last}
+						img={elem.picture.medium}
+						
+					/>
+				);
+			} else {
+				return (
+				<CardUser
+					id={elem.login.uuid}
+						name={elem.name.first}
+						lastname={elem.name.last}
+						img={elem.picture.medium }
+						
+					/>
+				);
+			}
+		})}
 </div>
 	
 </Layout>
