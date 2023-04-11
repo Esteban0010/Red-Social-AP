@@ -1,0 +1,65 @@
+---
+import CardUser from "../dumb/Card-User.astro";
+import {getUser } from "../../../store"
+import { createUser } from "../../Ajax/ajax";
+
+
+
+createUser()
+
+const users = getUser();
+
+const top8 = users.sort(function (a, b) { return b.follow - a.follow; }).slice(0, 8)
+
+---
+
+<div class="container">
+	<h1>Mas seguidos</h1>
+	<div class="container-card">
+		
+		{
+			top8 &&
+			top8.map((e, i) => {
+				
+					if (top8.length == i + 1) {
+						return (
+							
+							<CardUser
+								id={e.id}
+								name={e.name}
+								lastname={e.last}
+								img={e.img}
+								img1={e.imgplay[0]}
+								img2={e.imgplay[1]}
+								img3={e.imgplay[2]}
+								follow={e.follow}
+							/>
+						);
+					} else {
+						return (
+						<CardUser
+								id={e.id}
+								name={e.name}
+								lastname={e.last}
+								img={e.img}
+								img1={e.imgplay[0]}
+								img2={e.imgplay[1]}
+								img3={e.imgplay[2]}
+								follow={e.follow}
+							/>
+						);
+					}
+				})
+		}
+	</div>
+</div>
+<style>
+	.container{
+		
+	}
+	.container-card {
+		display: flex;
+		position: relative;
+		width: ;
+	}
+</style>

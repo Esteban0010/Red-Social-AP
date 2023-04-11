@@ -1,0 +1,84 @@
+---
+---
+
+<div>
+  <script>
+    const imagen = document.getElementById("imagen");
+
+    const cargarImagen = (entradas, observador) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          maskedImage.classList.remove("mask-animation");
+          setTimeout(() => maskedImage.classList.add("mask-animation"), 200);
+        } else {
+          maskedImage.classList.add("mask-animation");
+          setTimeout(
+            () => maskedImage.classList.remove("mask-animation"),
+            3000
+          );
+        }
+      });
+    };
+    const observador = new IntersectionObserver(cargarImagen, {
+      root: null,
+      rootMargin: " 0px 0px 0px 0px",
+      threshold: 1.0,
+    });
+
+    observador.observe(imagen);
+
+    const resetButton = document.querySelector(".reset-animation");
+    const maskedImage = document.querySelector(".color-image");
+
+    resetButton.addEventListener("click", () => {
+      maskedImage.classList.remove("mask-animation");
+      setTimeout(() => maskedImage.classList.add("mask-animation"), 100);
+    });
+</script>
+  <button class="reset-animation"> replay</button>
+  <div class="mask-container">
+    <div class="color-image"></div>
+    <img id="imagen" class="imgg" src="/bw-image.png" alt="" />
+  </div>
+</div>
+<style>
+  .mask-container {
+    width: 950px;
+    height: 566px;
+    position: relative;
+    background-color: rgb(28, 12, 69);
+  }
+
+  .imgg {
+    max-width: 100%;
+    display: block;
+  }
+
+  .color-image {
+    position: absolute;
+    inset: 0;
+    background-image: url("/color-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-mask-image: url("/masknew-2.png");
+    -webkit-mask-size: cover;
+    -webkit-mask-position: 0% 0%;
+
+    transition: -webkit-mask-position;
+  }
+  .mask-animation {
+    animation: addColor 500ms steps(23) forwards;
+  }
+
+  @keyframes addColor {
+    0% {
+      -webkit-mask-position: 0% 0%;
+      mask-position: 0% 0%;
+    }
+    100% {
+      -webkit-mask-position: 100% 0%;
+      mask-position: 100% 0%;
+    }
+  }
+</style>

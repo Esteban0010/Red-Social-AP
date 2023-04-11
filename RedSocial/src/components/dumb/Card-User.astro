@@ -1,0 +1,59 @@
+---
+import { setId } from "../../../store";
+const { name, img, lastname, id, img1, img2, img3, rep, follow } = Astro.props;
+export const redt=() =>{
+    setId(id);
+    return Astro.redirect("visitPerfil");
+}
+
+---
+
+
+<div class="card-container">
+    <button  onclick="redt()">
+        <a href="visitPerfil">a</a>
+        <img
+            src={img}
+            alt=""
+            class="img-defaulP"
+            style="border : white 1px solid"
+            id="perfil"
+        />
+        <h2 style="border : white 1px solid; color:black">
+            {name + " " + lastname}
+        </h2>
+    </button>
+    <h1>{follow}</h1>
+
+    <div class="bg-imgplay">
+        <img class="img-play" src={img1} alt="no hay img" />
+        <img class="img-play" src={img2} alt="no hay img" />
+        <img class="img-play" src={img3} alt="no hay img" />
+    </div>
+    <h2>{rep}</h2>
+</div>
+<style>
+    .card-container {
+        background-color: rgb(233, 234, 242);
+        border-radius: 2rem;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border: red 1px solid;
+    }
+    .img-defaulP {
+        border-radius: 5rem;
+    }
+
+    .img-play {
+        border: red 1px solid;
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+    }
+
+    .bg-imgplay {
+        background-color: black;
+    }
+</style>

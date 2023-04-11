@@ -1,0 +1,21 @@
+---
+import { getUser, getId } from "../../store";
+
+
+let userV = getUser()
+
+const user = userV.find(e => e.id === Astro.params.id);
+
+// Producto no encontrado
+if (!user) {
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not found'
+  });
+}
+
+---
+<div>
+    <h1>{user.name}</h1>
+    
+</div>
