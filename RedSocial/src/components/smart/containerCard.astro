@@ -3,19 +3,21 @@ import CardUser from "../dumb/Card-User.astro";
 import {getUser } from "../../../store"
 import { createUser } from "../../Ajax/ajax";
 
-
-
-createUser()
-
 const users = getUser();
 
-const top8 = users.sort(function (a, b) { return b.follow - a.follow; }).slice(0, 8)
+if(!users.length){
+	createUser()
+}
+
+
+
+const top8 = users.sort(function (a, b) { return b.follow - a.follow; }).slice(0, 5)
 
 ---
 
-<div class="container">
-	<h1>Mas seguidos</h1>
-	<div class="container-card">
+<div class="container row col-12 d-flex justify-content-center align-item-center" style="border:red 1px solid">
+	<h1 class="text-center">Mas seguidos</h1>
+	<div class="container-card col-12 d-flex justify-content-center align-item-center">
 		
 		{
 			top8 &&

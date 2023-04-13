@@ -10,11 +10,12 @@
         if (entrada.isIntersecting) {
           maskedImage.classList.remove("mask-animation");
           setTimeout(() => maskedImage.classList.add("mask-animation"), 200);
-        } else {
+        }
+         else {
           maskedImage.classList.add("mask-animation");
           setTimeout(
             () => maskedImage.classList.remove("mask-animation"),
-            3000
+            200
           );
         }
       });
@@ -27,15 +28,15 @@
 
     observador.observe(imagen);
 
-    const resetButton = document.querySelector(".reset-animation");
+    // const resetButton = document.querySelector(".reset-animation");
     const maskedImage = document.querySelector(".color-image");
 
-    resetButton.addEventListener("click", () => {
-      maskedImage.classList.remove("mask-animation");
-      setTimeout(() => maskedImage.classList.add("mask-animation"), 100);
-    });
+    // resetButton.addEventListener("click", () => {
+    //   maskedImage.classList.remove("mask-animation");
+    //   setTimeout(() => maskedImage.classList.add("mask-animation"), 100);
+    // });
 </script>
-  <button class="reset-animation"> replay</button>
+  <!-- <button class="reset-animation"> replay</button> -->
   <div class="mask-container">
     <div class="color-image"></div>
     <img id="imagen" class="imgg" src="/bw-image.png" alt="" />
@@ -46,11 +47,11 @@
     width: 950px;
     height: 566px;
     position: relative;
-    background-color: rgb(28, 12, 69);
+   
   }
 
   .imgg {
-    max-width: 100%;
+    width: 100%;
     display: block;
   }
 
@@ -68,7 +69,7 @@
     transition: -webkit-mask-position;
   }
   .mask-animation {
-    animation: addColor 500ms steps(23) forwards;
+    animation: addColor 700ms steps(23) forwards;
   }
 
   @keyframes addColor {

@@ -7,16 +7,15 @@ import ContainerCard from '../components/smart/containerCard.astro';
 import ImgMask from '../components/dumb/imgMask.astro';
 import {createUser} from "../Ajax/ajax.js"
 
-createUser()
 
 
 
   
 ---
 
-<Layout title="Welcome to Astro.">
-<NavBar/>
-<ContainerCard/>
+<Layout title="Welcome to Astro." >
+
+<ContainerCard  />
 <h1>a</h1>
 <h1>a</h1>
 <h1>a</h1>
@@ -34,8 +33,19 @@ v
 <h1>a</h1>
 <h1>a</h1>
 <h1>a</h1>
+<div class="d-flex justify-content-around">
+	<ImgMask class=" col-5" />
+	<div class="col-5 row d-flex align-items-center justify-content-center">
+		<div>
+			<h6>los Mejores Juegos</h6>
+			<h1>Encontra las Mejores Reseñas</h1>
+		</div>
+		
+		<button class="col-3"> Buscar Opiniones</button>
+	</div>
+</div>
 
-<ImgMask />
+
 <h1>a</h1>
 <h1>a</h1>
 <h1>a</h1>
@@ -55,46 +65,9 @@ v
 
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
 	}
 </style>

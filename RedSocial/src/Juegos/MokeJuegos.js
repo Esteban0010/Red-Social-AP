@@ -16,7 +16,7 @@ export  let play =[{
 {
     name:"Cs Go",
     pts:"2",
-    img:"https://w7.pngwing.com/pngs/25/642/png-transparent-counter-strike-global-offensive-counter-strike-source-dota-2-logo-others-emblem-text-orange.png"
+    img:"https://www.gazduirejocuri.ro/img/pic7.jpg.pagespeed.ce.YqyocFr9Jd.jpg"
 },
 {
     name:"GTA 5",

@@ -1,29 +1,23 @@
 ---
 import { setId } from "../../../store";
 const { name, img, lastname, id, img1, img2, img3, rep, follow } = Astro.props;
-export const redt=() =>{
-    setId(id);
-    return Astro.redirect("visitPerfil");
-}
+
 
 ---
-
-
-<div class="card-container">
-    <button  onclick="redt()">
-        <a href="visitPerfil">a</a>
+<div class="card-container row d-flex justify-content-center align-ite-center text-center h-100 col-2" style="border:blue 1px solid">
+    <a id="visit" href="/perfilV" class="textt">
         <img
             src={img}
             alt=""
-            class="img-defaulP"
+            class=""
             style="border : white 1px solid"
             id="perfil"
         />
-        <h2 style="border : white 1px solid; color:black">
+        <h2 class="text-white" style="border:none">
             {name + " " + lastname}
         </h2>
-    </button>
-    <h1>{follow}</h1>
+    </a>
+    <h1 class="">{follow}</h1>
 
     <div class="bg-imgplay">
         <img class="img-play" src={img1} alt="no hay img" />
@@ -36,14 +30,11 @@ export const redt=() =>{
     .card-container {
         background-color: rgb(233, 234, 242);
         border-radius: 2rem;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
         border: red 1px solid;
+        margin-left: 2%;
+        padding: 2%;
     }
-    .img-defaulP {
-        border-radius: 5rem;
-    }
+    
 
     .img-play {
         border: red 1px solid;
@@ -52,8 +43,7 @@ export const redt=() =>{
 
         border-radius: 50%;
     }
-
-    .bg-imgplay {
-        background-color: black;
+    .textt{
+        text-decoration: none;
     }
 </style>

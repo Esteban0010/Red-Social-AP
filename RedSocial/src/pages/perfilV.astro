@@ -1,0 +1,164 @@
+---
+import { getUser } from "../../store";
+import { play } from "../Juegos/MokeJuegos";
+import Layout from "../layouts/Layout.astro";
+
+
+
+let userV = getUser()
+const user =userV[0]
+console.log(user,"aa")
+let play1 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
+console.log(play1)
+let play2 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
+let play3 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
+
+---
+<Layout title="Welcome to Astro.">
+  <div class="profile">
+    <h1>{user.name} {user.last}</h1>
+    <img src={user.img} alt="Foto de perfil">
+    <div>
+    <button id="follow-button">Seguir</button>
+    <button id="follow-button">Mensaje</button>
+    </div>
+    <div class="description">
+      <p>Descripción del perfil</p>
+    </div>
+    <div class="followers-following">
+      <div class="followers">
+        <h2>Seguidores</h2>
+        <p id="followers-count">{user.follow}</p>
+      </div>
+      <div class="following">
+        <h2>Seguidos</h2>
+        <p id="following-count">{user.follow}</p>
+      </div>
+    </div>
+    <div class="rectangles">
+      <div class="rectangle">
+       
+        <h2>{play1.name}</h2>
+        
+        <img class="playimg" src={play1.img} alt="">
+        <p>{play1.pts}</p>
+        <div id="estrellas" class="start">
+
+        </div>
+        <div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, nihil a eos fugit tempore, adipisci cum animi impedit aspernatur labore tenetur! Saepe labore rem dolorum facere numquam laudantium mollitia adipisci!
+          </p>
+        </div>
+      </div>
+      <div class="rectangle">
+        <h2>{play2.name}</h2>
+        <img class="playimg" src={play2.img} alt="">
+        <p>{play2.pts}</p>
+        <div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, nihil a eos fugit tempore, adipisci cum animi impedit aspernatur labore tenetur! Saepe labore rem dolorum facere numquam laudantium mollitia adipisci!
+          </p>
+        </div>
+      </div>
+      <div class="rectangle">
+        <h2>{play3.name}</h2>
+        <img class="playimg" src={play3.img} alt="">
+        <p>{play3.pts}</p>
+        <div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, nihil a eos fugit tempore, adipisci cum animi impedit aspernatur labore tenetur! Saepe labore rem dolorum facere numquam laudantium mollitia adipisci!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </Layout>
+<style>
+  .profile {
+    text-align: center;
+  }
+  
+  .profile h1 {
+    font-size: 2em;
+  }
+  
+  .profile img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .profile button {
+    background-color:brown;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    border-radius: 20%;
+  }
+  
+  .profile .description {
+    border: 1px solid gray;
+    padding: 1em;
+    margin-top: 1em;
+  }
+  
+  .profile .description p {
+    font-size: 1.2em;
+  }
+  
+  .profile .followers-following {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+  }
+  
+  .profile .followers,
+  .profile .following {
+    width: 30%;
+    border: 1px solid gray;
+    padding: 1em;
+  }
+  
+  .profile .followers h2,
+  .profile .following h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .profile .followers p,
+  .profile .following p {
+    font-size: 1.2em;
+  }
+  
+  .profile .rectangles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+  }
+  
+  .profile .rectangle {
+    width: 30%;
+    border: 1px solid gray;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  .profile .rectangle h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .profile .rectangle p {
+    font-size: 1.2em;
+  }
+
+  .playimg{
+    width: 25%;
+    height: 25%;
+  }
+  
+  .start{
+    display: flex;
+  }
+</style>
