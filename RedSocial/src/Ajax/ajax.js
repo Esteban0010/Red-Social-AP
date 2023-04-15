@@ -7,9 +7,6 @@ export async function createUser() {
    const resul = await fetch("https://randomuser.me/api/?results=20")
       .then(response => response.json())
       .then(data => data.results)
-   let a
-   let b
-   let c
 
    let user = []
    resul.forEach(e =>
@@ -26,8 +23,16 @@ export async function createUser() {
          follow: Math.ceil(Math.random() * (1500 - 100) + 100),
       }));
    setUser(user)
-
 }
+
+
+
+
+
+
+
+
+
 
 
 

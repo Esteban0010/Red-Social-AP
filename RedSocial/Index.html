@@ -6,44 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Style.css" type="text/css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    <div class="profile">
-        <h1>Nombre del Perfil</h1>
-        <img src="icono-de-persona-perfil-red-social-aislado-vectorial-ilustración-161617336.jpg" alt="Foto de perfil">
-        <div>
-        <button id="follow-button">Seguir</button>
-        <button id="follow-button">Mensaje</button>
-        </div>
-        <div class="description">
-          <p>Descripción del perfil</p>
-        </div>
-        <div class="followers-following">
-          <div class="followers">
-            <h2>Seguidores</h2>
-            <p id="followers-count">0</p>
+<body class="row">
+  <script> 
+
+  let user ={
+    name: $("#fullname").html()
+  }
+
+ 
+ 
+ $(document).ready(function(){
+    $('#signupForm').validate({
+       rules: {
+          fullname: {
+             required: true,
+             minlength: 5
+          },
+          comments: {
+             required: true
+          },
+          password: {
+             required: true,
+             minlength: 5
+          },
+          confirm_password: {
+             required: true,
+             minlength: 5,
+             equalTo: "#password"
+          },
+          email: {
+             required: true,
+             email: true
+          },
+          
+       },
+       messages: {           
+          fullname: {
+             required: "Por favor ingresa tu nombre completo",
+             minlength: "Tu nombre debe ser de no menos de 5 caracteres"
+          },
+          comments: "Por favor ingresa un comentario",
+          password: {
+             required: "Por favor ingresa una contraseña",
+             minlength: "Tu contraseña debe ser de no menos de 5 caracteres de longitud"
+          },
+          confirm_password: {
+             required: "Ingresa un password",
+             minlength: "Tu contraseña debe ser de no menos de 5 caracteres de longitud",
+             equalTo: "Por favor ingresa la misma contraseña de arriba"
+          },
+          email: "Por favor ingresa un correo válido",
+          
+       },
+       
+    });
+ });
+  </script>
+  <div class="container">
+    <div class="panel panel-default">
+       
+       <div class="panel-body">           
+          <form class="form-horizontal" id="signupForm" >
+          
+          <div class="form-group">
+              <label for="fullname" class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                  <input type="text" id="fullname" name="fullname" class="form-control">
+              </div>
           </div>
-          <div class="following">
-            <h2>Seguidos</h2>
-            <p id="following-count">0</p>
+         
+         <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                  <input type="text" id="email" name="email" class="form-control">
+              </div>
           </div>
-        </div>
-        <div class="rectangles">
-          <div class="rectangle">
-            <h2>Título 1</h2>
-            <p>Cartas</p>
+         
+         <div class="form-group">
+              <label for="password" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                  <input type="text" id="password" name="password" class="form-control">
+              </div>
           </div>
-          <div class="rectangle">
-            <h2>Título 2</h2>
-            <p>Cartas</p>
+         
+         <div class="form-group">
+              <label for="confirm_password" class="col-sm-2 control-label">Confirm password</label>
+              <div class="col-sm-10">
+                  <input type="text" id="confirm_password" name="confirm_password" class="form-control">
+              </div>
           </div>
-          <div class="rectangle">
-            <h2>Título 3</h2>
-            <p>Cartas</p>
-          </div>
-        </div>
-      </div>      
+          <button type="submit">enviar</button>
+      </form> 
+       </div>
+    </div>
+ </div>
 </body>
 </html>
   
