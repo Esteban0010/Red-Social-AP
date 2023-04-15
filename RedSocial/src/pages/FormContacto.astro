@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import $ from 'jquery';
+---
+<script>
+(function () {
+  'use strict'
+  var forms = document.querySelectorAll('.needs-validation')
+
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+</script>
+
+
+<Layout title="Formulario de contacto">
+  <form class="row g-3 needs-validation" role="dialog" id="contactar" novalidate>
+    <div class="col-md-3">
+      <label for="staff" class="form-label">Miembros</label>
+      <select class="form-select" id="staff" required>
+        <option selected disabled value="">¿A quien desea contactar?</option>
+        <option id="lautaro">Avalos Lautaro Nahuel</option>
+        <option id="marina">Canavesio Marina Sol</option>
+        <option id="esteban">Pilchuman Esteban Martin</option>
+      </select>
+      <div class="valid-feedback">
+        
+      </div>
+      <div class="invalid-feedback">
+        Selecciona con quien desea contactarse.
+      </div>
+    </div>
+    <div class="col-md-12">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="name" value="" required>
+      <div class="valid-feedback">
+      </div>
+      <div class="invalid-feedback">
+        es necesario ingresar un nombre
+      </div>
+    </div>
+    <div class="col-md-12">
+      <label for="lastName" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="lastName" value="" required>
+      <div class="valid-feedback">
+      </div>
+      <div class="invalid-feedback">
+        es necesario ingresar un apellido
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="userEmail" class="form-label">Email</label>
+      <input type="email" class="form-control" id="userEmail" value="" required>
+      <div class="valid-feedback">
+      </div>
+      <div class="invalid-feedback">
+        introduzca un email valido
+      </div>
+    </div>    
+    <div class="mb-3">
+      <label for="msj" class="form-label">Mensaje</label>
+      <textarea class="form-control" id="msj" rows="3" value="" required></textarea>
+      <div class="valid-feedback">
+      </div>
+      <div class="invalid-feedback">
+        Necesita escribir un mensaje
+      </div>
+    </div>
+   
+    <div class="col-12">
+      <button class="btn btn-primary" id="enviarForm" type="submit">Enviar formulario</button>
+    </div>
+  </form>
+  
+
+</Layout>
