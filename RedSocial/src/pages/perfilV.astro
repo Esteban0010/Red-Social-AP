@@ -7,11 +7,11 @@ import Layout from "../layouts/Layout.astro";
 
 let userV = getUser()
 const user =userV[0]
-console.log(user,"aa")
-let play1 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
-console.log(play1)
-let play2 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
-let play3 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
+
+let play1 = play[0]
+
+let play2 = play[1]
+let play3 = play[2]
 
 ---
 <Layout title="Welcome to Astro.">
@@ -47,7 +47,7 @@ let play3 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
         </div>
         <div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, nihil a eos fugit tempore, adipisci cum animi impedit aspernatur labore tenetur! Saepe labore rem dolorum facere numquam laudantium mollitia adipisci!
+            League of Legends (LoL) es un juego popular y bien establecido en la industria de los deportes electrónicos. Aunque tiene una gran base de jugadores y una comunidad activa, algunos críticos han señalado que la curva de aprendizaje es empinada y puede resultar desalentadora para los nuevos jugadores. Además, algunos jugadores han reportado comportamientos tóxicos en la comunidad, lo que puede afectar negativamente la experiencia del juego. Sin embargo, LoL continúa siendo un juego divertido y emocionante para muchos jugadores en todo el mundo.
           </p>
         </div>
       </div>
@@ -57,7 +57,7 @@ let play3 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
         <p>{play2.pts}</p>
         <div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, nihil a eos fugit tempore, adipisci cum animi impedit aspernatur labore tenetur! Saepe labore rem dolorum facere numquam laudantium mollitia adipisci!
+            Call of Duty es una franquicia popular de juegos de disparos en primera persona, aunque algunos críticos señalan su fórmula predecible y repetitiva y la presencia de comportamientos tóxicos en la comunidad. A pesar de esto, muchos jugadores continúan disfrutando de los juegos de la serie por su innovación y originalidad, manteniendo una base de jugadores activa y comprometida.
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ let play3 = play[Math.ceil(Math.random() * (9 - 0) + 0)]
         <p>{play3.pts}</p>
         <div>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, nihil a eos fugit tempore, adipisci cum animi impedit aspernatur labore tenetur! Saepe labore rem dolorum facere numquam laudantium mollitia adipisci!
+            Fortnite es un juego de batalla real y construcción de bases que se ha vuelto extremadamente popular en todo el mundo. A pesar de las críticas que ha recibido por su adictividad, su estilo de juego de "matar o morir" y su enfoque en las microtransacciones, muchos jugadores continúan disfrutando de la emoción y la competitividad del juego. Además, el juego ha sido elogiado por su capacidad para unir a los jugadores en todo el mundo, ya que se puede jugar en línea con amigos y competir en eventos mundiales en vivo. En general, Fortnite ha dejado una marca duradera en la industria de los videojuegos y continúa siendo un juego popular entre muchos jugadores.
           </p>
         </div>
       </div>

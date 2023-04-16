@@ -16,7 +16,7 @@ export function setId( idUser ){
     id.set(idUser)
     }
     
-    export function getId(){
+export function getId(){
         return id.get()
     }
 
