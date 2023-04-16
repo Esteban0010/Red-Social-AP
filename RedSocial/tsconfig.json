@@ -1,7 +1,21 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+    // "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "target": "es2018",
+    "module": "esnext",
+    "jsx": "preserve",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["declarations.d.ts", "src/**/*"]
 }
+// {
+//   "compilerOptions": {
+
+//   },
+//  
+// }
