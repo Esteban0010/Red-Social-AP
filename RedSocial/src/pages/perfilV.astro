@@ -4,8 +4,9 @@ import { play } from "../Juegos/MokeJuegos";
 import Layout from "../layouts/Layout.astro";
 
 
+ let userV = getUser()
 
-let userV = getUser()
+
 const user =userV[0]
 
 let play1 = play[0]
@@ -15,8 +16,9 @@ let play3 = play[2]
 
 ---
 <Layout title="Welcome to Astro.">
+  {user && play ?
   <div class="profile">
-    <h1>{user.name} {user.last}</h1>
+    <h1>{user.name ?user.name:null} {user.last}</h1>
     <img src={user.img} alt="Foto de perfil">
     <div>
     <button id="follow-button">Seguir</button>
@@ -38,7 +40,7 @@ let play3 = play[2]
     <div class="rectangles">
       <div class="rectangle">
        
-        <h2>{play1.name}</h2>
+        <h2>{play1.name ? play1.name : null}</h2>
         
         <img class="playimg" src={play1.img} alt="">
         <p>{play1.pts}</p>
@@ -52,7 +54,7 @@ let play3 = play[2]
         </div>
       </div>
       <div class="rectangle">
-        <h2>{play2.name}</h2>
+        <h2>{play2.name ? play2.name:null}</h2>
         <img class="playimg" src={play2.img} alt="">
         <p>{play2.pts}</p>
         <div>
@@ -62,7 +64,7 @@ let play3 = play[2]
         </div>
       </div>
       <div class="rectangle">
-        <h2>{play3.name}</h2>
+        <h2>{play3.name ? play3.name : null}</h2>
         <img class="playimg" src={play3.img} alt="">
         <p>{play3.pts}</p>
         <div>
@@ -72,7 +74,7 @@ let play3 = play[2]
         </div>
       </div>
     </div>
-  </div>
+  </div>: null}
   </Layout>
 <style>
   .profile {
