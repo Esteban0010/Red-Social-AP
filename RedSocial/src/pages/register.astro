@@ -4,10 +4,12 @@ import Form from '../components/dumb/form.astro';
 
 ---
 <Layout title="form">
-    <Form />
+    <div class="container rounded-pill p-3 text-center col-4 m-5 letra borde "><h1>Formulario de registro</h1></div>
+  <Form />
 <div class= "body m-5">aaaa</div>
 <div class= "body m-5">aaaa</div>
 <div class= "body m-5">aaaa</div>
+
 
 </Layout>
 
@@ -32,5 +34,9 @@ color: #181818;
   font-family: 'Roboto', sans-serif;
   font-weight: 400 ;
 }
-    
+.borde {
+  border: 4px solid #3500D3;
+  background: linear-gradient( #181818 20% , #313131 30%, #333232 35%, #4b4a4a 60%, #181818 80%  );
+	
+}
 </style>

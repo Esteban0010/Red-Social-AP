@@ -16,57 +16,57 @@ let play3 = play[2]
 ---
 <Layout title="Welcome to Astro.">
   <div class="profile">
-    <h1>{user.name} {user.last}</h1>
-    <img src={user.img} alt="Foto de perfil">
+    <h1 class="nombrePerfil">{user.name} {user.last}</h1>
+    <img src={user.img} alt="Foto de perfil" class="rounded-circle lineas m-3">
     <div>
-    <button id="follow-button">Seguir</button>
-    <button id="follow-button">Mensaje</button>
+    <button id="follow-button" class="rounded-pill">Seguir</button>
+    <button id="follow-button" class="rounded-pill">Mensaje</button>
     </div>
-    <div class="description">
-      <p>Descripción del perfil</p>
+    <div class="description text-white col-5 text-center mx-auto rounded-pill p-5 ">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <div class="followers-following">
-      <div class="followers">
+    <div class="followers-following follow ">
+      <div class="followers rounded-pill">
         <h2>Seguidores</h2>
         <p id="followers-count">{user.follow}</p>
       </div>
-      <div class="following">
+      <div class="following rounded-pill">
         <h2>Seguidos</h2>
         <p id="following-count">{user.follow}</p>
       </div>
     </div>
-    <div class="rectangles">
-      <div class="rectangle">
+    <div class="rectangles ">
+      <div class="rectangle rounded">
        
-        <h2>{play1.name}</h2>
+        <h2 class="nombrePerfil">{play1.name}</h2>
         
-        <img class="playimg" src={play1.img} alt="">
-        <p>{play1.pts}</p>
+        <img class="playimg rounded-circle lineas" src={play1.img} alt="">
+        <p><span class="nombrePerfil">Puntuacion:</span> <span class="puntuacion">{play1.pts}/5</span></p>
         <div id="estrellas" class="start">
 
         </div>
         <div>
-          <p>
+          <p class="textoJuegos">
             League of Legends (LoL) es un juego popular y bien establecido en la industria de los deportes electrónicos. Aunque tiene una gran base de jugadores y una comunidad activa, algunos críticos han señalado que la curva de aprendizaje es empinada y puede resultar desalentadora para los nuevos jugadores. Además, algunos jugadores han reportado comportamientos tóxicos en la comunidad, lo que puede afectar negativamente la experiencia del juego. Sin embargo, LoL continúa siendo un juego divertido y emocionante para muchos jugadores en todo el mundo.
           </p>
         </div>
       </div>
-      <div class="rectangle">
-        <h2>{play2.name}</h2>
-        <img class="playimg" src={play2.img} alt="">
-        <p>{play2.pts}</p>
+      <div class="rectangle rounded ">
+        <h2 class="nombrePerfil">{play2.name}</h2>
+        <img class="playimg rounded-circle lineas" src={play2.img} alt="">
+        <p> <span class="nombrePerfil">Puntuacion:</span> <span class="puntuacion">{play2.pts}/5</span></p>
         <div>
-          <p>
-            Call of Duty es una franquicia popular de juegos de disparos en primera persona, aunque algunos críticos señalan su fórmula predecible y repetitiva y la presencia de comportamientos tóxicos en la comunidad. A pesar de esto, muchos jugadores continúan disfrutando de los juegos de la serie por su innovación y originalidad, manteniendo una base de jugadores activa y comprometida.
+          <p class="textoJuegos">
+           Call of Duty es una franquicia popular de juegos de disparos en primera persona, aunque algunos críticos señalan su fórmula predecible y repetitiva y la presencia de comportamientos tóxicos en la comunidad. A pesar de esto, muchos jugadores continúan disfrutando de los juegos de la serie por su innovación y originalidad, manteniendo una base de jugadores activa y comprometida.
           </p>
         </div>
       </div>
-      <div class="rectangle">
-        <h2>{play3.name}</h2>
-        <img class="playimg" src={play3.img} alt="">
-        <p>{play3.pts}</p>
+      <div class="rectangle rounded">
+        <h2 class="nombrePerfil">{play3.name}</h2>
+        <img class="playimg rounded-circle lineas" src={play3.img} alt="">
+        <p><span class="nombrePerfil">Puntuacion:</span> <span class="puntuacion">{play3.pts}/5</span></p>
         <div>
-          <p>
+          <p class="textoJuegos">
             Fortnite es un juego de batalla real y construcción de bases que se ha vuelto extremadamente popular en todo el mundo. A pesar de las críticas que ha recibido por su adictividad, su estilo de juego de "matar o morir" y su enfoque en las microtransacciones, muchos jugadores continúan disfrutando de la emoción y la competitividad del juego. Además, el juego ha sido elogiado por su capacidad para unir a los jugadores en todo el mundo, ya que se puede jugar en línea con amigos y competir en eventos mundiales en vivo. En general, Fortnite ha dejado una marca duradera en la industria de los videojuegos y continúa siendo un juego popular entre muchos jugadores.
           </p>
         </div>
@@ -75,6 +75,8 @@ let play3 = play[2]
   </div>
   </Layout>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+  
   .profile {
     text-align: center;
   }
@@ -89,22 +91,29 @@ let play3 = play[2]
   }
   
   .profile button {
-    background-color:brown;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    font-size: 1.2em;
-    border-radius: 20%;
+    display: inline-block;
+  padding: 10px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #3b14af;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000000;
   }
   
   .profile .description {
-    border: 1px solid gray;
     padding: 1em;
     margin-top: 1em;
+    border: 4px solid #3500D3;
+  background: linear-gradient( #181818 20% , #313131 30%, #333232 35%, #4b4a4a 60%, #181818 80%  );
+    
   }
   
   .profile .description p {
-    font-size: 1.2em;
+    text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+font-family: 'Roboto', sans-serif;
+font-weight: 400 ;
+
+  
   }
   
   .profile .followers-following {
@@ -116,8 +125,13 @@ let play3 = play[2]
   .profile .followers,
   .profile .following {
     width: 30%;
-    border: 1px solid gray;
     padding: 1em;
+    text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400 ;
+    border: 4px solid #3500D3;
+    background: linear-gradient( #181818 20% , #313131 30%, #333232 35%, #4b4a4a 60%, #181818 80%  );
+	
   }
   
   .profile .followers h2,
@@ -139,9 +153,10 @@ let play3 = play[2]
   
   .profile .rectangle {
     width: 30%;
-    border: 1px solid gray;
+    border: 4px solid #3500D3;
     padding: 1em;
     text-align: center;
+    background: linear-gradient( #181818 20% , #313131 30%, #333232 35%, #4b4a4a 60%, #181818 80%  );
   }
   
   .profile .rectangle h2 {
@@ -161,4 +176,37 @@ let play3 = play[2]
   .start{
     display: flex;
   }
+  .follow {
+color: #7362a7 ;
+text-shadow: 2px 2px 0 #240090, -2px -2px 0 #240090, 2px -2px 0 #240090, -2px 2px 0 #240090;
+font-family: 'Roboto', sans-serif;
+font-weight: 900 ;
+}
+
+.lineas {
+border: 4px solid #3500D3;
+}
+.nombrePerfil {
+color: #7362a7 ;
+text-shadow: 2px 2px 0 #240090, -2px -2px 0 #240090, 2px -2px 0 #240090, -2px 2px 0 #240090;
+font-family: 'Roboto', sans-serif;
+font-weight: 900 ;
+text-size-adjust: 10px;
+}
+
+.textoJuegos {
+    text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+font-family: 'Roboto', sans-serif;
+font-weight: 400 ;
+color:white;
+}
+
+.puntuacion {
+    text-shadow: 2px 2px 0 #161414;
+font-family: 'Roboto', sans-serif;
+font-weight: 400 ;
+color:rgb(227, 230, 25);
+}
+
 </style>
+
