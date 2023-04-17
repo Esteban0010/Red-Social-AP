@@ -1,31 +1,83 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
-
 <Layout title="presentacion de la empresa">
     
-    <div class="container-sm p-4 mt-4 mb-4 border h-100">
-        <div class="row">        
-            <div class="col border text-center">
-              Banner de la empresa
-            </div>          
-        </div>
-        <div class="container border">
-            <div class="row">
-              <div class="col-12 text-center p-5 ">
-                <p class="fs-2"> Descubre una nueva forma de compartir y leer críticas de videojuegos en nuestra red social</p>
-                <p class="fs-2"> Comparte tus opiniones sobre los titulos mas actuales y descubre lo que otros jugadores piensan de tus juegos favoritos en un entorno amigable y práctico.</p>
-                <p class="fs-2"> Nuestra plataforma te permite explorar críticas detalladas, comentar y seguir a otros usuarios con intereses similares.</p>
-                <p class="fs-2"> ¿que estas esperando?</p>
-              </div>
-            </div>
-          </div>
-          
-        <div class="row">        
-            <div class="col border text-center p-4">
-                <button type="button" class="btn btn-primary btn-lg">Inicio</button>
-            </div>          
-        </div>
+  <div class="container-sm p-4 mt-4 mb-4">
+    <div class="row">        
+        <div class="col text-center m-5">
+        <img src="/logo.PNG" alt=" aqui va logo" class="logo h-75 rounded-pill lineas">
+        </div>          
     </div>
+    <div class="container lineas rounded descripcion text-white ">
+        <div class="row">
+          <div class="col-12 text-center p-5 ">
+            <p class="fs-2"> <span class="resaltar fs-1">Descubre</span> una nueva forma de compartir y leer críticas de videojuegos en nuestra red social.</p>
+            <p class="fs-3"> <span class="resaltar fs-1">Comparte</span> tus opiniones sobre los titulos mas actuales y descubre lo que otros jugadores piensan de tus juegos favoritos en un entorno amigable y práctico.</p>
+            <p class="fs-3"> Nuestra plataforma te permite explorar críticas detalladas, comentar y seguir a otros usuarios con intereses similares.</p>
+            <p class="fs-2"> <span class="resaltar fs-1">¿que estas esperando?</span></p>
+          </div>
+        </div>
+      </div>
+      
+    <div class="row">        
+      <div class="col text-center p-4 ">
+        <a class="miBoton" href="">Inicio</a>
+        </div>          
+      </div>
+      <div class="row">        
+        <div class="col text-center p-4 ">
+          <a class="miBoton" href="Nosotros">Contactanos</a>
+        </div>          
+</div>
+</div>
+
+
 
 </Layout>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+.lineas {
+border: 4px solid #3500D3;
+
+}
+
+.follow {
+color: #7362a7 ;
+text-shadow: 2px 2px 0 #240090, -2px -2px 0 #240090, 2px -2px 0 #240090, -2px 2px 0 #240090;
+font-family: 'Roboto', sans-serif;
+font-weight: 900 ;
+}
+
+.descripcion {
+text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+font-family: 'Roboto', sans-serif;
+font-weight: 400 ;
+background-color: #282828;
+background-size: cover;
+}
+
+.resaltar {
+color: #3b14af ;
+text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+font-family: 'Roboto', sans-serif;
+font-weight: 900 ;
+text-size-adjust: 10px;
+}
+
+.miBoton {
+display: inline-block;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+background-color: #240090;
+color: #ffffff;
+text-shadow: 2px 2px 0 #000000;
+
+}
+
+
+</style>
