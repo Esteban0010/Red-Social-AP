@@ -5,30 +5,48 @@
 --- 
 <div>
   <form>
-    <div>
-      <label for="name">Nombre:</label>
-      <div>
-        <input type="text" id="name" name="name" required>
-        <div id="msg-name"></div>
+    <div class="container text-center borde rounded-pill ">
+      <div class="row-12 ">
+        <div class="col-12  m-3 ">
+          <label for="name" class="letra ">Nombre:</label>
+        <div>
+          <input class="lineas m-2 rounded-pill" type="text" id="name" name="name" required>
+          <div id="msg-name"></div>
+        </div>
       </div>
-      
+      <div class="row-12 ">
+        <div class="col-12 m-3">
+          <label for="email" class="letra" >Correo electrónico:</label><br>
+          <input class="lineas m-2 rounded-pill" type="email" id="email" name="email" required>
+          <div id="msg-email"></div>
+        </div>
+      </div>
+      <div class="row-12">
+        <div class="col-12 m-3">
+          <label for="password" class="letra" >Contraseña:</label><br>
+          <input class="lineas m-2 rounded-pill" type="password" id="password" name="password" required minlength="8">
+        </div>
+      </div>
+      <div class="row-12">
+        <div class="col-12 m-3">
+          <label for="confirm-password" class="letra">Confirmar contraseña:</label><br>
+          <input class="lineas m-2 rounded-pill" type="password" id="confirm-password" name="confirm-password" required minlength="8">
+          <div id="msg-password"></div>
+        </div>
+      </div>
+      <div class="row-12 ">
+        <div class="col-12 m-3 text-center">
+          <button class="miBoton lineas rounded-pill m-3" type="submit">Enviar</button>
+        </div>
+      </div>
     </div>
-    <div>
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
-      <div id="msg-email"></div>
-    </div>
-    <div>
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required minlength="8">
-    </div>
-    <div>
-      <label for="confirm-password">Confirmar contraseña:</label>
-      <input type="password" id="confirm-password" name="confirm-password" required minlength="8">
-      <div id="msg-password"></div>
-    </div>
-    <button type="submit">Enviar</button>
+  </div>
   </form>
+
+ 
+
+
+
   
   <div id="messages"></div>
   
@@ -55,34 +73,78 @@
     const password = $('#password');
     const confirmPassword = $('#confirm-password');
     if(!name.val().length) {
-      const errorMessage = $('<h1>').text('Este campo es requerido');
+      const errorMessage = $('<p class="text-center text-danger">').text('Este campo es requerido');
       msgName.append(errorMessage);
       return;
     }else if(!expreR.name.test(name.val())){
-      const errorMessage = $('<h1>').text('Solo debe contener letras');
+      const errorMessage = $('<p class="text-center text-danger">').text('Solo debe contener letras');
       msgName.append(errorMessage);
       return;
     }
     if(!email.val().length) {
-      const errorMessage = $('<h1>').text('Este campo es requerido');
+      const errorMessage = $('<pclass="text-center text-danger">').text('Este campo es requerido');
       msgEmail.append(errorMessage);
       return;
     }else if(!expreR.email.test(email.val())){
-      const errorMessage = $('<h1>').text('Debe ser un email');
+      const errorMessage = $('<p class="text-center text-danger">').text('Debe ser un email');
       msgEmail.append(errorMessage);
       return;
     }
 
     if (password.val() !== confirmPassword.val()) {
       console.log("holaaaaaa")
-      const errorMessage = $('<h1>').text('Las contraseñas no coinciden');
+      const errorMessage = $('<p class="text-center text-danger">').text('Las contraseñas no coinciden');
       msgPassword.append(errorMessage);
       return;
     }
 
-    const successMessage = $('<h1>').text('El formulario se ha enviado correctamente');
+    const successMessage = $('<h1 class="text-center text-success">').text('El formulario se ha enviado correctamente');
     messages.append(successMessage);
   });
 });
   </script>
 </div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+
+  .miBoton {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #240090;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000000;
+
+}
+
+.lineas {
+  border: 4px solid #3500D3;
+  
+
+}
+.borde {
+  border: 4px solid #3500D3;
+  background: linear-gradient( #181818 20% , #313131 30%, #333232 35%, #4b4a4a 60%, #181818 80%  );
+  color: #181818;
+	
+
+}
+
+.letra {
+  color: #ffffff ;
+  text-shadow: 2px 2px 0 #240090, -2px -2px 0 #240090, 2px -2px 0 #240090, -2px 2px 0 #240090;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900 ;
+}
+
+.error {
+  color: #a00101 ;
+  text-shadow: 2px 2px 0 #330000, -2px -2px 0 #330000, 2px -2px 0 #330000, -2px 2px 0 #330000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900 ;
+
+}
+</style>
